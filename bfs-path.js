@@ -11,7 +11,6 @@ function findNeighbors(node, matrix) {
     // Right
     if (matrix[row][col + 1]) neighbors.push([row, col + 1])
     // Your code here
-    console.log(`FROM FUNCTION: ${[neighbors]}`)
     return neighbors
 }
 
@@ -27,7 +26,6 @@ function bfsPath(matrix, startNode, endValue) {
      console.log(curr)
      console.log(nodeVal)
     const neighborsArr = findNeighbors(curr, matrix)
-    console.log(`NEIGHBOR ARRAY: ${neighborsArr}`)
     path.push(curr)
     if(nodeVal === endValue) {
         return path
@@ -36,7 +34,6 @@ function bfsPath(matrix, startNode, endValue) {
     for(let neighbor of neighborsArr) {
         if(!visited.has(neighbor.toString())) {
             visited.add(neighbor.toString())
-            console.log(`NEIGHBOR PUSH: ${neighbor}`)
             queue.push(neighbor)
         }
     }
